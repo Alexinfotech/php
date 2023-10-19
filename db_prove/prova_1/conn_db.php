@@ -1,10 +1,10 @@
 <?php
 function connessione(){
-$servername = "31.190.92.36";
-$username = "alex";
+$ip = "31.190.92.36:3306";
+$user = "alex";
 $password = "tmax2011";
-$dbName = "php";
-$conn = mysqli_connect($servername, $username, $password, $dbName);
+$db= "php";
+$conn = mysqli_connect($ip, $user, $password, $db);
 if (!$conn) {
     die("Connessione fallita: " . mysqli_connect_error());
 }

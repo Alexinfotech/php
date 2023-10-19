@@ -1,6 +1,5 @@
 <html>
     
-</head>
 <body>
 
 <h2>Interagisci con il tuo Database</h2>
@@ -15,7 +14,7 @@
 
     Nome: <input type="text" name="nome" required><br><br>
     Cognome: <input type="text" name="cognome" required><br><br>
-    Stipendio: <input type="number" name="stipendio" step="0.01"><br><br>
+    Stipendio: <input type="number" name="stipendio" ><br><br>
     <input type="submit" value="Esegui">
 </form>
 <form action="select.php" method="post">
