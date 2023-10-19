@@ -219,3 +219,85 @@ mysql> select * from utenti;
 | 43 | pluto      | pluto     | pluto@gmail.com                  | tmax2011 | 2013-01-23   | 2023-10-17      |
 +----+------------+-----------+----------------------------------+----------+--------------+-----------------+
 9 rows in set (0,02 sec)
+mysql> SELECT data_iscrizione, COUNT(data_iscrizione) as num_iscrizioni
+    -> FROM utenti
+    -> GROUP BY data_iscrizione;
++-----------------+----------------+
+| data_iscrizione | num_iscrizioni |
++-----------------+----------------+
+| 2023-01-01      |              1 |
+| 2023-01-02      |              1 |
+| 2023-01-03      |              1 |
+| 2023-01-04      |              1 |
+| 2023-01-05      |              1 |
+| 2023-01-06      |              1 |
+| 2023-01-07      |              1 |
+| 2023-01-08      |              1 |
+| 2023-01-09      |              1 |
+| 2023-01-10      |              1 |
+| 2023-01-11      |              1 |
+| 2023-01-12      |              1 |
+| 2023-01-13      |              1 |
+| 2023-01-14      |              1 |
+| 2023-01-15      |              1 |
+| 2023-01-16      |              1 |
+| 2023-01-17      |              1 |
+| 2023-01-18      |              1 |
+| 2023-01-19      |              1 |
+| 2023-01-20      |              1 |
+| 2023-10-09      |              9 |
++-----------------+----------------+
+21 rows in set (0,01 sec)
+
+mysql> 
+mysql> select * from utenti;
++----+------------+-----------+----------------------------------+----------------------+--------------+-----------------+---------------+
+| id | nome       | cognome   | email                            | password             | data_nascita | data_iscrizione | citta         |
++----+------------+-----------+----------------------------------+----------------------+--------------+-----------------+---------------+
+| 31 | alessandro | tornabene | alessandro.tornabene78@gmail.com | tmax2011             | 2022-12-01   | 2023-10-09      | Roma          |
+| 32 | Alessandro | Tornabene | alessandro.tornabene@gmail.com   | tmax2011             | 2020-10-01   | 2023-10-09      | Milano        |
+| 35 | Ale        | Torna     | ale@gmail.com                    | pippo                | 2016-10-01   | 2023-10-09      | Napoli        |
+| 37 | alessandro | tornabene | alessandro@gmail.com             | 12345                | 2016-10-01   | 2023-10-09      | Torino        |
+| 38 | matilde    | tornabene | matilde.tornabene@gmail.com      | tmax2011             | 2015-10-28   | 2023-10-09      | Palermo       |
+| 40 | francesca  | addonizio | francesca.addonizio@gmail.com    | tmax2011             | 2016-10-01   | 2023-10-09      | Genova        |
+| 41 | paolo      | rossi     | paolo@gmail.com                  | tmax2011             | 2023-08-02   | 2023-10-09      | Bologna       |
+| 42 | ciccio     | pasticcio | ciccio@gmail.com                 | tmax2011             | 2012-12-23   | 2023-10-09      | Firenze       |
+| 43 | pluto      | pluto     | pluto@gmail.com                  | tmax2011             | 2013-01-23   | 2023-10-09      | Cagliari      |
+| 44 | Mario      | Rossi     | mario.rossi@example.com          | passwordMario123     | 1985-01-01   | 2023-01-01      | Venezia       |
+| 45 | Luca       | Bianchi   | luca.bianchi@example.com         | passwordLuca123      | 1987-02-01   | 2023-01-02      | Verona        |
+| 46 | Anna       | Verdi     | anna.verdi@example.com           | passwordAnna123      | 1986-03-15   | 2023-01-03      | Parma         |
+| 47 | Giulia     | Neri      | giulia.neri@example.com          | passwordGiulia123    | 1988-04-20   | 2023-01-04      | Padova        |
+| 48 | Francesco  | Marrone   | francesco.marrone@example.com    | passwordFrancesco123 | 1983-05-05   | 2023-01-05      | Trieste       |
+| 49 | Chiara     | Giallo    | chiara.giallo@example.com        | passwordChiara123    | 1992-06-30   | 2023-01-06      | Bari          |
+| 50 | Roberto    | Viola     | roberto.viola@example.com        | passwordRoberto123   | 1978-07-07   | 2023-01-07      | Taranto       |
+| 51 | Elena      | Azzurro   | elena.azzurro@example.com        | passwordElena123     | 1991-08-15   | 2023-01-08      | Perugia       |
+| 52 | Davide     | Celeste   | davide.celeste@example.com       | passwordDavide123    | 1990-09-25   | 2023-01-09      | Trento        |
+| 53 | Federica   | Arancione | federica.arancione@example.com   | passwordFederica123  | 1984-10-31   | 2023-01-10      | Novara        |
+| 54 | Antonio    | Rosso     | antonio.rosso@example.com        | passwordAntonio123   | 1982-11-12   | 2023-01-11      | Ancona        |
+| 55 | Sara       | Verde     | sara.verde@example.com           | passwordSara123      | 1989-12-01   | 2023-01-12      | Lecce         |
+| 56 | Stefano    | Blu       | stefano.blu@example.com          | passwordStefano123   | 1981-02-20   | 2023-01-13      | Catania       |
+| 57 | Valeria    | Rosa      | valeria.rosa@example.com         | passwordValeria123   | 1993-03-28   | 2023-01-14      | Messina       |
+| 58 | Matteo     | Grigio    | matteo.grigio@example.com        | passwordMatteo123    | 1980-04-04   | 2023-01-15      | Pescara       |
+| 59 | Eleonora   | Magenta   | eleonora.magenta@example.com     | passwordEleonora123  | 1994-05-15   | 2023-01-16      | Agrigento     |
+| 60 | Alessio    | Turchese  | alessio.turchese@example.com     | passwordAlessio123   | 1986-06-06   | 2023-01-17      | Trapani       |
+| 61 | Beatrice   | Oro       | beatrice.oro@example.com         | passwordBeatrice123  | 1995-07-17   | 2023-01-18      | Caserta       |
+| 62 | Fabio      | Argento   | fabio.argento@example.com        | passwordFabio123     | 1983-08-24   | 2023-01-19      | Brindisi      |
+| 63 | Paola      | Bronzo    | paola.bronzo@example.com         | passwordPaola123     | 1992-09-03   | 2023-01-20      | Reggio Emilia |
++----+------------+-----------+----------------------------------+----------------------+--------------+-----------------+---------------+
+29 rows in set (0,02 sec)
++-----------------+--------------+------+-----+-------------+----------------+
+| Field           | Type         | Null | Key | Default     | Extra          |
++-----------------+--------------+------+-----+-------------+----------------+
+| id              | int(11)      | NO   | PRI | NULL        | auto_increment |
+| nome            | varchar(255) | NO   |     | NULL        |                |
+| cognome         | varchar(255) | NO   |     | NULL        |                |
+| email           | varchar(255) | NO   | UNI | NULL        |                |
+| password        | varchar(255) | NO   |     | NULL        |                |
+| data_nascita    | date         | YES  |     | NULL        |                |
+| data_iscrizione | date         | YES  |     | NULL        |                |
+| citta           | varchar(255) | NO   |     | Sconosciuto |                |
++-----------------+--------------+------+-----+-------------+----------------+
+8 rows in set (0,01 sec)
+
+mysql> 
+
