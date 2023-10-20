@@ -300,4 +300,117 @@ mysql> select * from utenti;
 8 rows in set (0,01 sec)
 
 mysql> 
+mysql> INSERT INTO data_iscrizione (id, data_iscrizione)
+    -> SELECT id, data_iscrizione FROM utenti;
+Query OK, 29 rows affected (0,02 sec)
+Records: 29  Duplicates: 0  Warnings: 0
 
+mysql> ALTER TABLE utenti DROP COLUMN data_iscrizione;
+Query OK, 0 rows affected (0,04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from utenti;
++----+------------+-----------+----------------------------------+----------------------+--------------+---------------+
+| id | nome       | cognome   | email                            | password             | data_nascita | citta         |
++----+------------+-----------+----------------------------------+----------------------+--------------+---------------+
+| 31 | alessandro | tornabene | alessandro.tornabene78@gmail.com | tmax2011             | 2022-12-01   | Roma          |
+| 32 | Alessandro | Tornabene | alessandro.tornabene@gmail.com   | tmax2011             | 2020-10-01   | Milano        |
+| 35 | Ale        | Torna     | ale@gmail.com                    | pippo                | 2016-10-01   | Napoli        |
+| 37 | alessandro | tornabene | alessandro@gmail.com             | 12345                | 2016-10-01   | Torino        |
+| 38 | matilde    | tornabene | matilde.tornabene@gmail.com      | tmax2011             | 2015-10-28   | Palermo       |
+| 40 | francesca  | addonizio | francesca.addonizio@gmail.com    | tmax2011             | 2016-10-01   | Genova        |
+| 41 | paolo      | rossi     | paolo@gmail.com                  | tmax2011             | 2023-08-02   | Bologna       |
+| 42 | ciccio     | pasticcio | ciccio@gmail.com                 | tmax2011             | 2012-12-23   | Firenze       |
+| 43 | pluto      | pluto     | pluto@gmail.com                  | tmax2011             | 2013-01-23   | Cagliari      |
+| 44 | Mario      | Rossi     | mario.rossi@example.com          | passwordMario123     | 1985-01-01   | Venezia       |
+| 45 | Luca       | Bianchi   | luca.bianchi@example.com         | passwordLuca123      | 1987-02-01   | Verona        |
+| 46 | Anna       | Verdi     | anna.verdi@example.com           | passwordAnna123      | 1986-03-15   | Parma         |
+| 47 | Giulia     | Neri      | giulia.neri@example.com          | passwordGiulia123    | 1988-04-20   | Padova        |
+| 48 | Francesco  | Marrone   | francesco.marrone@example.com    | passwordFrancesco123 | 1983-05-05   | Trieste       |
+| 49 | Chiara     | Giallo    | chiara.giallo@example.com        | passwordChiara123    | 1992-06-30   | Bari          |
+| 50 | Roberto    | Viola     | roberto.viola@example.com        | passwordRoberto123   | 1978-07-07   | Taranto       |
+| 51 | Elena      | Azzurro   | elena.azzurro@example.com        | passwordElena123     | 1991-08-15   | Perugia       |
+| 52 | Davide     | Celeste   | davide.celeste@example.com       | passwordDavide123    | 1990-09-25   | Trento        |
+| 53 | Federica   | Arancione | federica.arancione@example.com   | passwordFederica123  | 1984-10-31   | Novara        |
+| 54 | Antonio    | Rosso     | antonio.rosso@example.com        | passwordAntonio123   | 1982-11-12   | Ancona        |
+| 55 | Sara       | Verde     | sara.verde@example.com           | passwordSara123      | 1989-12-01   | Lecce         |
+| 56 | Stefano    | Blu       | stefano.blu@example.com          | passwordStefano123   | 1981-02-20   | Catania       |
+| 57 | Valeria    | Rosa      | valeria.rosa@example.com         | passwordValeria123   | 1993-03-28   | Messina       |
+| 58 | Matteo     | Grigio    | matteo.grigio@example.com        | passwordMatteo123    | 1980-04-04   | Pescara       |
+| 59 | Eleonora   | Magenta   | eleonora.magenta@example.com     | passwordEleonora123  | 1994-05-15   | Agrigento     |
+| 60 | Alessio    | Turchese  | alessio.turchese@example.com     | passwordAlessio123   | 1986-06-06   | Trapani       |
+| 61 | Beatrice   | Oro       | beatrice.oro@example.com         | passwordBeatrice123  | 1995-07-17   | Caserta       |
+| 62 | Fabio      | Argento   | fabio.argento@example.com        | passwordFabio123     | 1983-08-24   | Brindisi      |
+| 63 | Paola      | Bronzo    | paola.bronzo@example.com         | passwordPaola123     | 1992-09-03   | Reggio Emilia |
++----+------------+-----------+----------------------------------+----------------------+--------------+---------------+
+29 rows in set (0,02 sec)
+
+mysql> select * from data_iscrizine;
+ERROR 1146 (42S02): Table 'php.data_iscrizine' doesn't exist
+mysql> select * from data_iscrizione;
++----+-----------------+
+| id | data_iscrizione |
++----+-----------------+
+| 31 | 2023-10-09      |
+| 32 | 2023-10-09      |
+| 35 | 2023-10-09      |
+| 37 | 2023-10-09      |
+| 38 | 2023-10-09      |
+| 40 | 2023-10-09      |
+| 41 | 2023-10-09      |
+| 42 | 2023-10-09      |
+| 43 | 2023-10-09      |
+| 44 | 2023-01-01      |
+| 45 | 2023-01-02      |
+| 46 | 2023-01-03      |
+| 47 | 2023-01-04      |
+| 48 | 2023-01-05      |
+| 49 | 2023-01-06      |
+| 50 | 2023-01-07      |
+| 51 | 2023-01-08      |
+| 52 | 2023-01-09      |
+| 53 | 2023-01-10      |
+| 54 | 2023-01-11      |
+| 55 | 2023-01-12      |
+| 56 | 2023-01-13      |
+| 57 | 2023-01-14      |
+| 58 | 2023-01-15      |
+| 59 | 2023-01-16      |
+| 60 | 2023-01-17      |
+| 61 | 2023-01-18      |
+| 62 | 2023-01-19      |
+| 63 | 2023-01-20      |
++----+-----------------+
+29 rows in set (0,02 sec)
+mysql> SELECT data_iscrizione, COUNT(id) as numero_utenti
+    -> FROM data_iscrizione
+    -> GROUP BY data_iscrizione
+    -> ORDER BY data_iscrizione;
++-----------------+---------------+
+| data_iscrizione | numero_utenti |
++-----------------+---------------+
+| 2023-01-01      |             1 |
+| 2023-01-02      |             1 |
+| 2023-01-03      |             1 |
+| 2023-01-04      |             1 |
+| 2023-01-05      |             1 |
+| 2023-01-06      |             1 |
+| 2023-01-07      |             1 |
+| 2023-01-08      |             1 |
+| 2023-01-09      |             1 |
+| 2023-01-10      |             1 |
+| 2023-01-11      |             1 |
+| 2023-01-12      |             1 |
+| 2023-01-13      |             1 |
+| 2023-01-14      |             1 |
+| 2023-01-15      |             1 |
+| 2023-01-16      |             1 |
+| 2023-01-17      |             1 |
+| 2023-01-18      |             1 |
+| 2023-01-19      |             1 |
+| 2023-01-20      |             1 |
+| 2023-10-09      |             9 |
++-----------------+---------------+
+21 rows in set (0,04 sec)
+
+mysql> 
